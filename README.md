@@ -5,10 +5,18 @@ Pyxel製の架空処刑ローグライト v0.2。
 
 ## ブラウザ版
 
-[専用ページを開く](https://app-t317av.v2.appdeploy.ai/)
+ソース・配布ファイル・検証記録は、このGitHubリポジトリで管理します。
+`index.html` にブラウザ版を同梱しています。
+
+GitHub Pagesの公開設定後のURL：
+[冥界執行局を開く](https://jirodasu.github.io/underworld-execution-rogue/)
+
+公開設定：リポジトリの **Settings → Pages → Build and deployment** で
+**Deploy from a branch → main → / (root) → Save** を選択します。
+公開設定の有効化と公開URLでの起動は未確認です。
 
 スマートフォンは横持ち。初回のCLICK TO STARTを押すと起動します。
-専用ページはPyxel 2.5.7を固定して使用します。公式ランチャーは最新エンジンを使用するため、この配布版と実行環境が異なります。
+同梱ページはPyxel 2.5.7を固定して使用します。
 
 確認用ブラウザではOpenGL初期化エラーのため実プレイ未完了。ネイティブ描画と入力を通した5回の自動プレイは完了。
 
@@ -43,7 +51,8 @@ py tools/build_web.py
 ```
 
 `index.html` と `game.pyxapp` が配布ファイルです。
-GitHub Pagesの場合はSettings → Pages → Deploy from a branch → main / root。
+更新時はソースと再生成した配布ファイルを同じコミットで反映します。
+GitHub Pagesを上記の設定にした場合、`main` の更新で公開版も更新されます。
 
 ## 検証・仕様
 
