@@ -2,7 +2,7 @@
 import json
 import sys
 from pathlib import Path
-KEY = 'underworld-bureau-v2'
+KEY = 'underworld-bureau-v3'
 
 def load():
     try:
@@ -10,7 +10,7 @@ def load():
             import js
             value = js.window.localStorage.getItem(KEY)
         else:
-            value = (Path.home()/'.underworld-bureau-v2.json').read_text()
+            value = (Path.home()/'.underworld-bureau-v3.json').read_text()
         data = json.loads(str(value))
         return max(0, int(data.get('best', 0)))
     except Exception:
@@ -23,7 +23,7 @@ def save(best):
             import js
             js.window.localStorage.setItem(KEY, value)
         else:
-            (Path.home()/'.underworld-bureau-v2.json').write_text(value)
+            (Path.home()/'.underworld-bureau-v3.json').write_text(value)
         return True
     except Exception:
         return False

@@ -1,0 +1,386 @@
+[
+  {
+    "run": 1,
+    "seed": 410,
+    "strategy": "元気を残す",
+    "score": 50,
+    "turns": 8,
+    "early": false,
+    "hp": 3,
+    "bonus": 20,
+    "history": [
+      {
+        "name": "鏡の刑",
+        "card": 1,
+        "points": 3,
+        "hp_before": 10,
+        "hp_after": 8,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "鏡の刑",
+        "card": 1,
+        "points": 3,
+        "hp_before": 8,
+        "hp_after": 6,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 6,
+        "hp_after": 3,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 3,
+        "hp_after": 5,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 5,
+        "hp_after": 2,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 2,
+        "hp_after": 4,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 4,
+        "hp_after": 6,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 6,
+        "hp_after": 3,
+        "shadow_before": 0,
+        "shadow_after": 0
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "seed": 411,
+    "strategy": "今の点を優先",
+    "score": 24,
+    "turns": 4,
+    "early": true,
+    "hp": 0,
+    "bonus": 0,
+    "history": [
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 10,
+        "hp_after": 7,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 7,
+        "hp_after": 4,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "鏡の刑",
+        "card": 1,
+        "points": 3,
+        "hp_before": 4,
+        "hp_after": 2,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 2,
+        "hp_after": 0,
+        "shadow_before": 0,
+        "shadow_after": 0
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "seed": 412,
+    "strategy": "影から鏡",
+    "score": 56,
+    "turns": 8,
+    "early": false,
+    "hp": 2,
+    "bonus": 20,
+    "history": [
+      {
+        "name": "影の刑",
+        "card": 0,
+        "points": 2,
+        "hp_before": 10,
+        "hp_after": 9,
+        "shadow_before": 0,
+        "shadow_after": 1
+      },
+      {
+        "name": "鏡の刑",
+        "card": 1,
+        "points": 8,
+        "hp_before": 9,
+        "hp_after": 7,
+        "shadow_before": 1,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 7,
+        "hp_after": 4,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 4,
+        "hp_after": 1,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 1,
+        "hp_after": 3,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 3,
+        "hp_after": 5,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "影の刑",
+        "card": 0,
+        "points": 2,
+        "hp_before": 5,
+        "hp_after": 4,
+        "shadow_before": 0,
+        "shadow_after": 1
+      },
+      {
+        "name": "鏡の刑",
+        "card": 1,
+        "points": 8,
+        "hp_before": 4,
+        "hp_after": 2,
+        "shadow_before": 1,
+        "shadow_after": 0
+      }
+    ]
+  },
+  {
+    "run": 4,
+    "seed": 413,
+    "strategy": "星とひと休み",
+    "score": 58,
+    "turns": 8,
+    "early": false,
+    "hp": 1,
+    "bonus": 20,
+    "history": [
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 10,
+        "hp_after": 7,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 7,
+        "hp_after": 4,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 4,
+        "hp_after": 6,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 6,
+        "hp_after": 3,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 3,
+        "hp_after": 5,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 5,
+        "hp_after": 2,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 2,
+        "hp_after": 4,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "星の刑",
+        "card": 2,
+        "points": 7,
+        "hp_before": 4,
+        "hp_after": 1,
+        "shadow_before": 0,
+        "shadow_after": 0
+      }
+    ]
+  },
+  {
+    "run": 5,
+    "seed": 414,
+    "strategy": "休みすぎる",
+    "score": 28,
+    "turns": 8,
+    "early": false,
+    "hp": 10,
+    "bonus": 20,
+    "history": [
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 10,
+        "hp_after": 10,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 10,
+        "hp_after": 10,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 10,
+        "hp_after": 10,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 10,
+        "hp_after": 10,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 10,
+        "hp_after": 10,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 10,
+        "hp_after": 10,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 10,
+        "hp_after": 10,
+        "shadow_before": 0,
+        "shadow_after": 0
+      },
+      {
+        "name": "ひと休み",
+        "card": 3,
+        "points": 1,
+        "hp_before": 10,
+        "hp_after": 10,
+        "shadow_before": 0,
+        "shadow_after": 0
+      }
+    ]
+  }
+]

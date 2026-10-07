@@ -8,7 +8,7 @@ html='''<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0a1015">
-  <meta name="description" content="刑をつなぐ。予算を整える。冥界の執行官が挑む８手番のスコアアタック。">
+  <meta name="description" content="３枚から１枚。おばけの元気を残して８回選ぶスコアアタック。">
   <title>冥界執行局 — 架空処刑ローグライト</title>
   <style>
     html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #0a1015; color: #e8e4cf; font-family: system-ui, sans-serif; }
@@ -24,7 +24,7 @@ html='''<!doctype html>
   <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel@2.5.7/wasm/pyxel.js"></script>
 </head>
 <body>
-  <div id="portrait"><div><h1>冥界執行局</h1><p>スマートフォンを横向きにしてください。<br>刑をつなぎ、８手番の判決を完成させる。</p></div></div>
+  <div id="portrait"><div><h1>冥界執行局</h1><p>スマートフォンを横向きにしてください。<br>おばけの元気を残して、８回選ぼう。</p></div></div>
   <div id="failure" role="alert"><h2>起動できませんでした</h2><p>通信を確認して、もう一度お試しください。</p><button onclick="location.reload()">再読み込み</button></div>
   <script>
     launchPyxel({ command: 'play', name: 'game.pyxapp', gamepad: 'disabled', base64: 'PAYLOAD' }).catch(() => {
