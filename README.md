@@ -1,10 +1,10 @@
 # 冥界執行局 — Underworld Execution Rogue
 
-Pyxel製の架空処刑ローグライト v0.3。執行官として、不思議な刑を選ぶゲームです。
+Pyxel製の架空処刑ローグライト v0.3.1。執行官として、不思議な刑を選ぶゲームです。
 
 [ブラウザで遊ぶ](https://jirodasu.github.io/underworld-execution-rogue/)
 
-スマートフォンは横持ち。最初の **CLICK TO START** をタップします。
+スマートフォンは横持ち。読み込みが終わると、最初の **はじめる** ボタンを押せます。
 
 ## あそびかた
 
