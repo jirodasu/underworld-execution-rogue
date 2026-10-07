@@ -1,4 +1,4 @@
-M+ bitmap font (umplus_j10r.bdf), subset from Pyxel's bundled example assets.
+M+ bitmap font (umplus_j12r.bdf), subset from Pyxel's bundled example assets.
 Copyright (C) 2002-2004 COZ
 
 This font is a free software.
@@ -6,5 +6,6 @@ Unlimited permission is granted to use, copy, and distribute it,
 with or without modification, either commercially and noncommercially.
 THIS FONT IS PROVIDED "AS IS" WITHOUT WARRANTY.
 
-Source: https://github.com/kitao/pyxel/blob/main/python/pyxel/examples/assets/umplus_j10r.bdf
+Source: https://github.com/kitao/pyxel/blob/main/python/pyxel/examples/assets/umplus_j12r.bdf
 Only glyphs used by this prototype and ASCII are included.
+The title font doubles the pixels of selected glyphs without smoothing.

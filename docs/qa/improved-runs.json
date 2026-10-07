@@ -1,0 +1,494 @@
+[
+  {
+    "run": 1,
+    "seed": 410,
+    "strategy": "安全・判決書",
+    "score": 286,
+    "turns": 8,
+    "early": false,
+    "hp": 0,
+    "seals": [
+      "memory",
+      "star"
+    ],
+    "contract": "鏡の判決",
+    "contract_bonus": 48,
+    "history": [
+      {
+        "name": "鏡審判刑",
+        "card": 2,
+        "points": 24,
+        "hp_before": 100,
+        "hp_after": 83,
+        "base": 24,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "鏡審判刑",
+        "card": 2,
+        "points": 24,
+        "hp_before": 83,
+        "hp_after": 66,
+        "base": 24,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "星落とし刑",
+        "card": 5,
+        "points": 48,
+        "hp_before": 66,
+        "hp_after": 46,
+        "base": 48,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 16,
+        "hp_before": 46,
+        "hp_after": 37,
+        "base": 16,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 18,
+        "hp_before": 37,
+        "hp_after": 25,
+        "base": 18,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "記憶没収刑",
+        "card": 3,
+        "points": 13,
+        "hp_before": 25,
+        "hp_after": 18,
+        "base": 9,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1.5
+      },
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 18,
+        "hp_before": 18,
+        "hp_after": 6,
+        "base": 18,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 37,
+        "hp_before": 6,
+        "hp_after": 0,
+        "base": 16,
+        "combo": 9,
+        "novelty": 0,
+        "mult": 1.5
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "seed": 411,
+    "strategy": "目先の得点",
+    "score": 285,
+    "turns": 8,
+    "early": false,
+    "hp": 13,
+    "seals": [
+      "star",
+      "variety"
+    ],
+    "contract": "鏡の判決",
+    "contract_bonus": 0,
+    "history": [
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 16,
+        "hp_before": 100,
+        "hp_after": 91,
+        "base": 16,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "星落とし刑",
+        "card": 5,
+        "points": 48,
+        "hp_before": 91,
+        "hp_after": 71,
+        "base": 48,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 18,
+        "hp_before": 71,
+        "hp_after": 59,
+        "base": 18,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 37,
+        "hp_before": 59,
+        "hp_after": 50,
+        "base": 16,
+        "combo": 9,
+        "novelty": 0,
+        "mult": 1.5
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 34,
+        "hp_before": 50,
+        "hp_after": 41,
+        "base": 16,
+        "combo": 18,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 18,
+        "hp_before": 41,
+        "hp_after": 29,
+        "base": 18,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "記憶没収刑",
+        "card": 3,
+        "points": 25,
+        "hp_before": 29,
+        "hp_after": 22,
+        "base": 9,
+        "combo": 0,
+        "novelty": 8,
+        "mult": 1.5
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 43,
+        "hp_before": 22,
+        "hp_after": 13,
+        "base": 16,
+        "combo": 27,
+        "novelty": 0,
+        "mult": 1
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "seed": 412,
+    "strategy": "影と鏡",
+    "score": 187,
+    "turns": 6,
+    "early": true,
+    "hp": 0,
+    "seals": [
+      "shadow",
+      "variety"
+    ],
+    "contract": "鏡の判決",
+    "contract_bonus": 0,
+    "history": [
+      {
+        "name": "鏡審判刑",
+        "card": 2,
+        "points": 24,
+        "hp_before": 100,
+        "hp_after": 83,
+        "base": 24,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "鏡審判刑",
+        "card": 2,
+        "points": 24,
+        "hp_before": 83,
+        "hp_after": 66,
+        "base": 24,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "星落とし刑",
+        "card": 5,
+        "points": 48,
+        "hp_before": 66,
+        "hp_after": 40,
+        "base": 48,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "星落とし刑",
+        "card": 5,
+        "points": 48,
+        "hp_before": 40,
+        "hp_after": 14,
+        "base": 48,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "記憶没収刑",
+        "card": 3,
+        "points": 17,
+        "hp_before": 14,
+        "hp_after": 7,
+        "base": 9,
+        "combo": 0,
+        "novelty": 8,
+        "mult": 1
+      },
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 26,
+        "hp_before": 7,
+        "hp_after": 0,
+        "base": 18,
+        "combo": 0,
+        "novelty": 8,
+        "mult": 1
+      }
+    ]
+  },
+  {
+    "run": 4,
+    "seed": 413,
+    "strategy": "階段累積",
+    "score": 220,
+    "turns": 7,
+    "early": true,
+    "hp": 0,
+    "seals": [
+      "stairs",
+      "variety"
+    ],
+    "contract": "終わらぬ巡礼",
+    "contract_bonus": 0,
+    "history": [
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 18,
+        "hp_before": 100,
+        "hp_after": 88,
+        "base": 18,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "星落とし刑",
+        "card": 5,
+        "points": 72,
+        "hp_before": 88,
+        "hp_after": 62,
+        "base": 48,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1.5
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 16,
+        "hp_before": 62,
+        "hp_after": 53,
+        "base": 16,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "星落とし刑",
+        "card": 5,
+        "points": 48,
+        "hp_before": 53,
+        "hp_after": 27,
+        "base": 48,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "影流し刑",
+        "card": 1,
+        "points": 20,
+        "hp_before": 27,
+        "hp_after": 16,
+        "base": 12,
+        "combo": 0,
+        "novelty": 8,
+        "mult": 1
+      },
+      {
+        "name": "記憶没収刑",
+        "card": 3,
+        "points": 17,
+        "hp_before": 16,
+        "hp_after": 9,
+        "base": 9,
+        "combo": 0,
+        "novelty": 8,
+        "mult": 1
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 29,
+        "hp_before": 9,
+        "hp_after": 0,
+        "base": 16,
+        "combo": 13,
+        "novelty": 0,
+        "mult": 1
+      }
+    ]
+  },
+  {
+    "run": 5,
+    "seed": 414,
+    "strategy": "鐘と星",
+    "score": 257,
+    "turns": 8,
+    "early": false,
+    "hp": 2,
+    "seals": [
+      "bell",
+      "star"
+    ],
+    "contract": "終わらぬ巡礼",
+    "contract_bonus": 0,
+    "history": [
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 18,
+        "hp_before": 100,
+        "hp_after": 88,
+        "base": 18,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "星落とし刑",
+        "card": 5,
+        "points": 72,
+        "hp_before": 88,
+        "hp_after": 68,
+        "base": 48,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1.5
+      },
+      {
+        "name": "鏡審判刑",
+        "card": 2,
+        "points": 24,
+        "hp_before": 68,
+        "hp_after": 51,
+        "base": 24,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 18,
+        "hp_before": 51,
+        "hp_after": 39,
+        "base": 18,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 32,
+        "hp_before": 39,
+        "hp_after": 30,
+        "base": 16,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 2
+      },
+      {
+        "name": "記憶没収刑",
+        "card": 3,
+        "points": 9,
+        "hp_before": 30,
+        "hp_after": 23,
+        "base": 9,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "無限階段刑",
+        "card": 0,
+        "points": 25,
+        "hp_before": 23,
+        "hp_after": 14,
+        "base": 16,
+        "combo": 9,
+        "novelty": 0,
+        "mult": 1
+      },
+      {
+        "name": "終わらぬ鐘刑",
+        "card": 4,
+        "points": 18,
+        "hp_before": 14,
+        "hp_after": 2,
+        "base": 18,
+        "combo": 0,
+        "novelty": 0,
+        "mult": 1
+      }
+    ]
+  }
+]
