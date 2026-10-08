@@ -1,7 +1,7 @@
 # title: 冥界執行局
 # author: jirodasu
 # desc: 架空の刑を組み合わせる冥界スコアアタック
-# version: 0.3.1
+# version: 0.4.0
 import math
 import random
 from pathlib import Path
@@ -18,7 +18,7 @@ PALETTE = [0x0A1015, 0x16232B, 0x263B40, 0x32564E, 0x52665F, 0x76857A,
 
 class App:
     def __init__(self):
-        pyxel.init(W, H, title='冥界執行局 v0.3.1', fps=30)
+        pyxel.init(W, H, title='冥界執行局 v0.4.0', fps=30)
         pyxel.colors.from_list(PALETTE)
         pyxel.mouse(True)
         base = Path(__file__).parent / 'assets'
@@ -39,6 +39,7 @@ class App:
         self.reduced_motion = False
         self.help = False
         self.tick = 0
+        self.previous = None
         self.sound_setup()
         pyxel.run(self.update, self.draw)
 
@@ -79,6 +80,8 @@ class App:
         self.text(x+(w-self.font.text_width(label))//2,y+(h-12)//2,label,7 if active else 5)
 
     def begin(self, same=True):
+        if self.run.finished:
+            self.previous = (self.run.seed, self.run.score)
         seed = self.run.seed if same else random.randint(1,999999)
         self.run = Run(seed)
         self.screen = 'play'
@@ -161,7 +164,7 @@ class App:
         pyxel.rect(0,0,W,43,0)
         pyxel.line(16,42,624,42,3)
         self.text(16,11,'冥界執行局',10)
-        pyxel.text(16,29,'UNDERWORLD BUREAU / v0.3.1',5)
+        pyxel.text(16,29,'UNDERWORLD BUREAU / v0.4.0',5)
         self.button((477,10,67,24),'音 OFF' if self.muted else '音 ON',accent=4)
         self.button((551,10,73,24),'静止 ON' if self.reduced_motion else '静止 OFF',accent=4)
         if self.screen!='title': self.button((443,10,26,24),'?',accent=4)
@@ -204,7 +207,15 @@ class App:
         pyxel.rect(x+4,y-15,4,4,0)
         pyxel.pset(x-6,y-14,10)
         pyxel.pset(x+5,y-14,10)
-        pyxel.line(x-2,y-5,x+3,y-5,3)
+        if self.run.hp<=3:
+            pyxel.line(x-3,y-4,x+3,y-4,8)
+            pyxel.pset(x-3,y-3,8)
+            pyxel.pset(x+3,y-3,8)
+        else:
+            pyxel.line(x-2,y-5,x+3,y-5,3)
+        if self.run.shadow:
+            pyxel.circ(x+29,y+6,5,12)
+            pyxel.circ(x+32,y+3,5,0)
         pyxel.line(x-3,y+5,x-7,y+22,5)
         pyxel.line(x+4,y+6,x+11,y+21,5)
 
@@ -252,8 +263,8 @@ class App:
         self.hall(95,49,450,143)
         self.center(54,'冥界執行局',10,self.title_font)
         pyxel.text(263,88,'THE FINAL VERDICT',5)
-        self.center(201,'３枚から１枚。どれを使う？',7)
-        self.center(223,'おばけの元気を残して、８回選ぼう。',6)
+        self.center(201,'点を取ると、おばけの元気がへる。',7)
+        self.center(223,'３枚から１枚。休みながら８回選ぼう。',6)
         self.center(243,'８回できたら＋20点！ 高い点をめざそう。',10)
         self.center(260,f'最高記録  {self.best} 点',6)
         self.button((218,280,204,38),'はじめる')
@@ -285,36 +296,40 @@ class App:
         self.text(28,148,f'{r.score} 点',10)
         self.hall()
         self.panel(468,50,156,131)
-        self.text(480,60,'影 → 鏡で８点！',10)
-        if r.shadow:
-            self.icon('shadow',484,88,12)
-            self.text(512,91,'影がある！',12)
-            self.text(480,120,'鏡が出たら８点',7)
-            self.text(480,143,'休んでも影は残る',6)
-        else:
-            self.text(480,91,'影はまだない',6)
-            self.text(480,120,'影でためる',7)
-            self.text(480,143,'鏡で使う',6)
-        if self.effect and r.history:
+        self.text(480,60,'影で鏡が強くなる',10)
+        self.icon('shadow',480,84,12 if r.shadow else 3)
+        self.text(507,87,'影あり：１つ' if r.shadow else '影なし：０',12 if r.shadow else 6)
+        self.text(480,111,'鏡 ３点 → ８点' if r.shadow else '鏡は今３点',7)
+        self.text(480,133,'鏡で影を使う' if r.shadow else '影の刑でためる',6)
+        self.text(480,155,'影は１つまで',5)
+        if self.armed:
+            self.text(21,186,'１  カードを選ぶ',6)
+            self.text(226,186,'２  結果を見て',10)
+            self.text(440,186,'３  決める',10)
+        elif r.history:
             entry=r.history[-1]
-            self.text(21,186,f'{entry["name"]} ＋{entry["points"]}点  元気 {entry["hp_before"]} → {entry["hp_after"]}',10)
+            note=('影を使った！' if entry['card']==1 and entry['shadow_before'] else
+                  '影は１つのまま' if entry['card']==0 and entry['shadow_before'] else
+                  '影をためた！' if entry['card']==0 else
+                  '元気がもどった' if entry['hp_after']>entry['hp_before'] else '次はどれ？')
+            self.text(21,186,f'前の１回：＋{entry["points"]}点  元気 {entry["hp_before"]} → {entry["hp_after"]}  ／ {note}',10)
         else:
-            self.text(21,186,'１  カードを選ぶ',6 if self.armed else 10)
-            self.text(226,186,'２  下の結果を見る',10 if self.armed else 6)
-            self.text(440,186,'３  決める',10 if self.armed else 6)
+            self.text(21,186,'まず１枚選ぼう。点と元気を見くらべよう。',10)
         for i,index in enumerate(r.offer):
             c=CARDS[index]
             x,y,w,h=CARD_RECTS[i]
             selected=self.armed and self.selected==i
             danger=r.hp_after(index)==0
-            self.panel(x,y,w,h,c.color if selected else 3,2 if selected else 1)
+            self.panel(x,y,w,h,c.color if selected else 4 if self.hit(CARD_RECTS[i]) else 3,2 if selected else 1)
+            if selected:
+                pyxel.line(x+8,y+h-4,x+w-8,y+h-4,c.color)
             pyxel.rect(x+1,y+1,3,h-2,c.color)
             self.icon(c.tag,x+12,y+11,c.color)
             self.text(x+42,y+11,c.name,7)
             self.text(x+42,y+29,c.role,6)
             self.text(x+12,y+51,f'＋{r.preview(index)} 点',10)
             delta=r.hp_after(index)-r.hp
-            self.text(x+98,y+51,f'元気 {delta:+d}',11 if delta>=0 else 8)
+            self.text(x+87,y+51,f'元気 {abs(delta)}'+('回復' if delta>=0 else '使う'),11 if delta>0 else 8 if delta<0 else 6)
             hint='元気０で終わり！' if danger else ('元気はいっぱい！' if index==3 and r.hp==MAX_HP else ('影はもうある' if index==0 and r.shadow else c.lines[0]))
             self.text(x+12,y+72,self.fit(hint,174),8 if danger else c.color)
             self.text(x+12,y+89,f'使ったあと：元気 {r.hp_after(index)}',6)
@@ -328,7 +343,7 @@ class App:
             elif r.turn==TURNS-1:
                 hint='これで８回！ さらに＋20点もらえる。'
             elif idx==3:
-                hint='今は回復しない。休んでも１回使う。' if r.hp==MAX_HP else '元気をもどして、次の１回にそなえよう。'
+                hint='今は回復しない。休んでも１回使う。' if r.hp==MAX_HP else f'元気を{after-r.hp}もどす。休んでも１回使う。'
             elif idx==0:
                 hint='影はもうある。鏡を待とう。' if r.shadow else '使うと影がたまる。次の鏡は８点！'
             elif idx==1:
@@ -338,7 +353,7 @@ class App:
             self.text(16,334,self.fit(hint,396),8 if danger else 6)
             self.button(EXECUTE_RECT,'終わっても使う' if danger else 'これを使う',not self.cooldown,8 if danger else 10)
         else:
-            self.text(16,318,'カードを選ぼう。まだ使わないので安心。',6)
+            self.text(16,318,'点を取る？ 元気をもどす？ １枚選ぼう。',7)
             self.text(16,338,'休むのも１回。元気０になると終わり。',5)
             self.button(EXECUTE_RECT,'１枚選ぼう',False)
 
@@ -347,6 +362,7 @@ class App:
         r=self.run
         self.panel(34,53,572,238,9)
         self.text(52,63,f'{r.turn} / ８回',6)
+        pyxel.text(52,80,f'CASE {r.seed:06d}',5)
         self.text(419,63,'元気がなくなった' if r.early else '８回できた！',8 if r.early else 11)
         self.center(89,'今回の点',6)
         self.center(109,f'{r.score} 点',10,self.title_font)
@@ -358,7 +374,13 @@ class App:
             y=194+(i%4)*20
             self.text(x,y,f'{i+1}  {entry["name"]}',6)
             self.text(x+126,y,f'＋{entry["points"]}点  元気{entry["hp_after"]}',10)
-        self.center(275,'次はひと休みを入れて、８回をめざそう。' if r.early else '同じカードでも、使う順番で点が変わる！',8 if r.early else 6)
+        combos=sum(e['card']==1 and e['shadow_before'] for e in r.history)
+        if self.previous and self.previous[0]==r.seed:
+            delta=r.score-self.previous[1]
+            insight=f'前の同じカードより {delta:+d}点。影を使った鏡 {combos}回。'
+        else:
+            insight='ひと休みで元気を残して、８回をめざそう。' if r.early else f'影を使った鏡 {combos}回。同じカードで別の順番を試そう。'
+        self.center(275,insight,8 if r.early else 6)
         self.button((110,308,198,36),'同じカードで再挑戦')
         self.button((331,308,198,36),'新しいカードで遊ぶ')
         if not self.save_ok: self.center(347,'記録はこの起動中だけ残ります。',5)

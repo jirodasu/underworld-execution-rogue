@@ -67,6 +67,27 @@ for n,label in enumerate(labels):
     seed=r.seed;first=main.Run(seed).offer
     key(pyxel.KEY_R)
     assert app.screen=='play' and app.run.seed==seed and app.run.offer==first
+# Additional first-play and replay states, including persistent combo feedback.
+app.run=main.Run(412);app.begin();tick(12)
+key((pyxel.KEY_1,pyxel.KEY_2,pyxel.KEY_3)[app.run.offer.index(3)])
+capture('full-health-v040.png')
+key(pyxel.KEY_RETURN)
+assert app.run.turn==1 and app.run.hp==10
+while not (app.run.shadow and 1 in app.run.offer):
+    idx=0 if 0 in app.run.offer else 3
+    key((pyxel.KEY_1,pyxel.KEY_2,pyxel.KEY_3)[app.run.offer.index(idx)])
+    key(pyxel.KEY_RETURN)
+key((pyxel.KEY_1,pyxel.KEY_2,pyxel.KEY_3)[app.run.offer.index(1)])
+key(pyxel.KEY_RETURN)
+tick(120)
+assert not app.effect and not app.armed and app.run.history[-1]['points']==8
+capture('feedback-v040.png')
+app.run=main.Run(414);app.previous=(414,30)
+while not app.run.finished: app.run.choose(3)
+app.effect=0;capture('replay-comparison-v040.png')
+assert app.run.score-app.previous[1]==-2
+key(pyxel.KEY_R)
+assert app.previous==(414,28)
 key(pyxel.KEY_H);assert app.help
 capture('help-v3.png')
 key(pyxel.KEY_RETURN);assert not app.help
